@@ -43,7 +43,6 @@ const Login = () => {
         color: "#fff",
       }}
     >
-      {/* LEFT PANEL – BRAND / CONTEXT */}
       <Box
         sx={{
           display: { xs: "none", md: "flex" },

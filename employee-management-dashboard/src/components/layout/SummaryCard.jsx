@@ -1,8 +1,6 @@
 import { Paper, Typography, Box } from "@mui/material";
 
-/**
- * Dashboard Summary Card
- */
+//Dashboard Summary Card
 const SummaryCard = ({ title, value, color = "primary" }) => {
   return (
     <Paper

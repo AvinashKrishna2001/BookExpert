@@ -9,9 +9,7 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-/**
- * App Header – Dashboard Aligned
- */
+
 const Header = () => {
   const { logout } = useAuth();
   const navigate = useNavigate();

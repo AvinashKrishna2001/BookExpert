@@ -1,6 +1,4 @@
-/**
- * Formats employee data for printing
- */
+//Formats employee data for printing
 export const formatEmployeesForPrint = (employees) => {
   return employees.map((emp, index) => ({
     ...emp,

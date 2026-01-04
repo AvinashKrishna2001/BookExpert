@@ -10,11 +10,6 @@ import {
 } from "@mui/material";
 import WarningAmberOutlinedIcon from "@mui/icons-material/WarningAmberOutlined";
 
-/**
- * Generic confirmation dialog
- * - Dashboard aligned
- * - Calm but clear destructive intent
- */
 const ConfirmDialog = ({
   open,
   title,

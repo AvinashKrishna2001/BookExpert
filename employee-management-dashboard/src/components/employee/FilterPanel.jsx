@@ -7,11 +7,7 @@ import {
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import ClearIcon from "@mui/icons-material/Clear";
 
-/**
- * Employee Filter Panel
- * - Gender + Status
- * - Clear filters UX
- */
+
 const FilterPanel = ({
   gender,
   status,

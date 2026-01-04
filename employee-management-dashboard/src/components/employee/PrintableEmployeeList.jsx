@@ -1,9 +1,7 @@
 import { forwardRef } from "react";
 
-/**
- * Printable Employee List
- * This component is ONLY used for printing
- */
+//Printable Employee List
+//This component is ONLY used for printing
 const PrintableEmployeeList = forwardRef(({ employees }, ref) => {
   return (
     <div ref={ref} style={{ padding: "20px" }}>

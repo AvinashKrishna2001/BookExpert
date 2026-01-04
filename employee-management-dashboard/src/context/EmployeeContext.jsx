@@ -6,51 +6,40 @@ import {
   deleteEmployee,
 } from "../services/employeeService";
 
-/**
- * EmployeeContext manages all employee-related state
- */
+//EmployeeContext manages all employee-related state
 const EmployeeContext = createContext(null);
 
 export const EmployeeProvider = ({ children }) => {
-  const [employees, setEmployees] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [employees, setEmployees] = useState([]); //Employee list
+  const [loading, setLoading] = useState(true); //Loading state
 
-  /**
-   * Load employees on first render
-   */
+  //Load employees on first render
   useEffect(() => {
     const data = getEmployees();
     setEmployees(data);
     setLoading(false);
   }, []);
 
-  /**
-   * Create employee
-   */
+  // Create employee
   const createEmployee = (employee) => {
     const updatedEmployees = addEmployee(employee);
     setEmployees(updatedEmployees);
   };
 
-  /**
-   * Edit employee
-   */
+  // Edit employee
   const editEmployee = (employee) => {
     const updatedEmployees = updateEmployee(employee);
     setEmployees(updatedEmployees);
   };
 
-  /**
-   * Remove employee
-   */
+  // Remove employee
+   
   const removeEmployee = (id) => {
     const updatedEmployees = deleteEmployee(id);
     setEmployees(updatedEmployees);
   };
 
-  /**
-   * Toggle Active / Inactive status
-   */
+  
   const toggleEmployeeStatus = (id) => {
     const employee = employees.find((emp) => emp.id === id);
     if (!employee) return;
@@ -79,9 +68,7 @@ export const EmployeeProvider = ({ children }) => {
   );
 };
 
-/**
- * Custom hook for EmployeeContext
- */
+//Custom hook for EmployeeContext
 export const useEmployees = () => {
   return useContext(EmployeeContext);
 };

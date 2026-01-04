@@ -1,8 +1,6 @@
 import Header from "./Header";
 
-/**
- * App Layout
- */
+
 const Layout = ({ children }) => {
   return (
     <>

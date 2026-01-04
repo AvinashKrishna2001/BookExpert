@@ -13,9 +13,6 @@ import PrintableEmployeeList from "../components/employee/PrintableEmployeeList"
 import { useEmployees } from "../context/EmployeeContext";
 import SummaryCard from "../components/layout/SummaryCard";
 
-/**
- * Dashboard Page
- */
 const Dashboard = () => {
   const {
     employees,
@@ -26,12 +23,10 @@ const Dashboard = () => {
     toggleEmployeeStatus,
   } = useEmployees();
 
-  // UI state
   const [formOpen, setFormOpen] = useState(false);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [confirmOpen, setConfirmOpen] = useState(false);
 
-  // Search & filter state
   const [searchText, setSearchText] = useState("");
   const [genderFilter, setGenderFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
@@ -44,9 +39,7 @@ const Dashboard = () => {
     documentTitle: "Employee_List",
   });
 
-  /**
-   * Combined filtering
-   */
+  // Combined filtering
   const filteredEmployees = useMemo(() => {
     return employees.filter((emp) => {
       const matchesSearch = emp.fullName
@@ -64,9 +57,7 @@ const Dashboard = () => {
     });
   }, [employees, searchText, genderFilter, statusFilter]);
 
-  /**
-   * Add / Edit handler
-   */
+  //Add / Edit handler
   const handleSubmit = (employee) => {
     if (employee.id) {
       editEmployee(employee);
@@ -78,9 +69,7 @@ const Dashboard = () => {
     }
   };
 
-  /**
-   * Delete handlers
-   */
+  // Delete handlers
   const handleDeleteClick = (employee) => {
     setSelectedEmployee(employee);
     setConfirmOpen(true);
@@ -115,7 +104,7 @@ const Dashboard = () => {
           gap: 2,
         }}
       >
-        {/* LEFT: TITLE */}
+      
         <Box>
           <Typography variant="h5" fontWeight={600} sx={{ lineHeight: 1.2 }}>
             Employee Dashboard
@@ -125,7 +114,6 @@ const Dashboard = () => {
           </Typography>
         </Box>
 
-        {/* RIGHT: ACTIONS */}
         <Box display="flex" gap={1.5}>
           <Button
             variant="contained"

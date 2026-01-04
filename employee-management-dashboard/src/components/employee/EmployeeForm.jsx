@@ -18,9 +18,7 @@ import {
 import PersonIcon from "@mui/icons-material/Person";
 import { validateEmployee } from "../../utils/validation";
 
-/**
- * Empty employee template
- */
+//Empty employee object
 const EMPTY_EMPLOYEE = {
   id: "",
   fullName: "",
@@ -31,20 +29,16 @@ const EMPTY_EMPLOYEE = {
   profileImage: "",
 };
 
-/**
- * EmployeeForm
- * - Add & Edit
- * - Modern UI
- * - Responsive
- */
+//EmployeeForm
+// - Add & Edit
+// - Modern UI
+// - Responsive
 const EmployeeForm = ({ open, onClose, onSubmit, initialData }) => {
   const [employee, setEmployee] = useState(EMPTY_EMPLOYEE);
   const [errors, setErrors] = useState({});
   const [imagePreview, setImagePreview] = useState("");
 
-  /**
-   * Handle Add vs Edit mode
-   */
+  // Handle Add vs Edit mode
   useEffect(() => {
     if (initialData) {
       setEmployee(initialData);
@@ -55,17 +49,13 @@ const EmployeeForm = ({ open, onClose, onSubmit, initialData }) => {
     }
   }, [initialData]);
 
-  /**
-   * Handle input changes
-   */
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEmployee((prev) => ({ ...prev, [name]: value }));
   };
 
-  /**
-   * Handle image upload
-   */
+  // Handle image upload
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -81,9 +71,7 @@ const EmployeeForm = ({ open, onClose, onSubmit, initialData }) => {
     reader.readAsDataURL(file);
   };
 
-  /**
-   * Submit form
-   */
+  // Submit form
   const handleSubmit = () => {
     const validationErrors = validateEmployee(employee);
     setErrors(validationErrors);
@@ -94,9 +82,7 @@ const EmployeeForm = ({ open, onClose, onSubmit, initialData }) => {
     handleClose();
   };
 
-  /**
-   * Reset & close
-   */
+  // Reset & close
   const handleClose = () => {
     setEmployee(EMPTY_EMPLOYEE);
     setErrors({});

@@ -1,6 +1,5 @@
-/**
- * Validates employee form fields
- */
+// Validates employee form fields
+ 
 export const validateEmployee = (employee) => {
   const errors = {};
 

@@ -1,11 +1,9 @@
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-/**
- * Search employees by name
- * - Icon based
- * - Clean UX
- */
+//Search employees by name
+// - Icon based
+// - Clean UX
 const SearchBar = ({ value, onChange }) => {
   return (
     <TextField

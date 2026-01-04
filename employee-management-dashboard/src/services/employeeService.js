@@ -1,30 +1,21 @@
-/**
- * employeeService
- * ----------------
- * Acts like a mock backend.
- * All employee CRUD operations go through this layer.
- */
+// employeeService
+// Acts like a mock backend.
+// All employee CRUD operations go through this layer.
 
 const STORAGE_KEY = "employees";
 
-/**
- * Fetch all employees from localStorage
- */
+// Fetch all employees from localStorage
 export const getEmployees = () => {
   const data = localStorage.getItem(STORAGE_KEY);
   return data ? JSON.parse(data) : [];
 };
 
-/**
- * Save employees array to localStorage
- */
+// Save employees array to localStorage
 const saveEmployees = (employees) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(employees));
 };
 
-/**
- * Add a new employee
- */
+// Add a new employee
 export const addEmployee = (employee) => {
   const employees = getEmployees();
   const updatedEmployees = [...employees, employee];
@@ -32,9 +23,7 @@ export const addEmployee = (employee) => {
   return updatedEmployees;
 };
 
-/**
- * Update an existing employee
- */
+// Update an existing employee
 export const updateEmployee = (updatedEmployee) => {
   const employees = getEmployees();
 
@@ -46,9 +35,7 @@ export const updateEmployee = (updatedEmployee) => {
   return updatedEmployees;
 };
 
-/**
- * Delete an employee by ID
- */
+// Delete an employee by ID
 export const deleteEmployee = (id) => {
   const employees = getEmployees();
   const updatedEmployees = employees.filter((emp) => emp.id !== id);
